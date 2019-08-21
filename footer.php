@@ -30,6 +30,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+ <!--JavaScript at end of body for optimize/d loading-->
+ <script type="text/javascript" src="<?php echo get_bloginfo('template_url');?>/js/materialize.min.js"></script>
+ <!--/ end materialize js -->
+ 
 <?php wp_footer(); ?>
 
 </body>

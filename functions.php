@@ -45,6 +45,9 @@ if ( ! function_exists( 'two_four_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'two-four' ),
+			'menu-2' => esc_html__( 'Secondary', 'two-four' ),
+			'menu-3' => esc_html__( 'Footer', 'two-four' ),
+			'menu-4' => esc_html__( 'Legal', 'two-four' ),
 		) );
 
 		/*
@@ -75,7 +78,7 @@ if ( ! function_exists( 'two_four_setup' ) ) :
 		 */
 		add_theme_support( 'custom-logo', array(
 			'height'      => 250,
-			'width'       => 250,
+			'width'       => 125,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -119,11 +122,22 @@ add_action( 'widgets_init', 'two_four_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+ 
+ // Register Style
+function two_four_styles() {
+	
+    wp_enqueue_style( 'two-four-style', get_stylesheet_uri() );
+	wp_register_style( 'materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', false, '1.0.0' );
+	wp_enqueue_style( 'materialize' );
+}
+add_action( 'wp_enqueue_scripts', 'two_four_styles' );
+
+
+// Register Script
 function two_four_scripts() {
-	wp_enqueue_style( 'two-four-style', get_stylesheet_uri() );
-
+	wp_register_script( 'materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'materialize' );
 	wp_enqueue_script( 'two-four-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'two-four-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -141,6 +155,11 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/portfolio-cpt.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
