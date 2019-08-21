@@ -157,9 +157,10 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Customizer additions.
+ * Custom Post Types.
  */
 require get_template_directory() . '/inc/portfolio-cpt.php';
+require get_template_directory() . '/inc/testimonials-cpt.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
