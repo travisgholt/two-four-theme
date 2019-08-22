@@ -161,7 +161,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/portfolio-cpt.php';
 require get_template_directory() . '/inc/testimonials-cpt.php';
-
+require get_template_directory() . '/inc/services-cpt.php';
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
