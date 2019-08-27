@@ -1,18 +1,3 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Two-Four
- */
-
-?>
-
-	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'two-four' ) ); ?>">
@@ -28,10 +13,6 @@
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-
- <!--JavaScript at end of body for optimize/d loading-->
- <script type="text/javascript" src="<?php echo get_bloginfo('template_url');?>/js/materialize.min.js"></script>
- <!--/ end materialize js -->
  
 <?php wp_footer(); ?>
 
